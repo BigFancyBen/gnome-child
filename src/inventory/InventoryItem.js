@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const api = "https://api.osrsbox.com/items/";
 
 const InventItem = styled.div`
-  width: 25%;
-  padding-top: 25%;
+  width: calc( 25% - 8px );
+  padding-top: calc( 25% - 8px );
   height: 0;
   position: relative;
+  margin: 4px;
 
   img {
     position: absolute;
@@ -24,10 +25,10 @@ const ItemCount = styled.div`
   top: 0;
   left: 0;
   color: #fff000;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 2px 2px 2px #000, 1px 1px 1px #000;
   z-index: 4;
   font-family: 'Runescape';
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 function InventoryItem() {

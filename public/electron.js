@@ -6,13 +6,15 @@ const isDev = require('electron-is-dev');
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width: 1500,
+    height: 1000,
+    frame: false,
+    resizable: false,
     webPreferences: {
       nodeIntegration: true,
     },
   });
-
+  win.setAspectRatio(3/2);
   // and load the index.html of the app.
   // win.loadFile("index.html");
   win.loadURL(

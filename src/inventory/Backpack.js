@@ -3,17 +3,11 @@ import styled from 'styled-components';
 import InventoryItem from './InventoryItem';
 
 const BackpackOuter = styled.div`
-  height: 450px;
   position: absolute;
-  bottom: 30px;
-  right: 30px;
-
-  width: 300px;
-  background-color: rgba(0,0,0,0.5);
-
-  border: black 5px solid;
-  border-radius: 15px;
-  z-index: 2;
+  top: 41.5vh;
+  right: 4vw;
+  width: 22vw;
+  z-index: 6;
   padding: 10px;
 `;
 
