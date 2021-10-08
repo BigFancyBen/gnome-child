@@ -1,5 +1,17 @@
+
+  @font-face {
+    font-family: 'Runescape';
+    src: local('Runescape'), url(./font/runescape.woff2) format('woff2'),
+         local('Runescape'), url(./font/runescape.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
 .App {
+
   text-align: center;
+  font-family: 'Runescape';
 }
 
 .App-logo {
@@ -35,4 +47,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body{
+  font-family: 'Runescape';
 }
