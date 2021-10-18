@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../rsframe.png';
+import '../images/rsframe.png';
 
 const ImageWrapper = styled.div`
   position: absolute;
@@ -21,7 +21,7 @@ function Screen() {
 
   return (
     <ImageWrapper>
-      <img src="./rsframe.png" alt="" srcset="" />
+      <img src="./images/rsframe.png" alt="" srcset="" />
     </ImageWrapper>
   );
 }

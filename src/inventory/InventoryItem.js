@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const api = "https://api.osrsbox.com/items/";
 
 const InventItem = styled.div`
-  width: calc( 25% - 8px );
-  padding-top: calc( 25% - 8px );
+  width: calc( 25% - 18px );
+  padding-top: calc( 25% - 18px );
   height: 0;
   position: relative;
-  margin: 4px;
+  margin: 9px;
 
   img {
     position: absolute;
@@ -25,10 +25,20 @@ const ItemCount = styled.div`
   top: 0;
   left: 0;
   color: #fff000;
-  text-shadow: 2px 2px 2px #000, 1px 1px 1px #000;
+  /* text-shadow: 2px 2px 2px #000, 1px 1px 1px #000; */
+  text-shadow:
+    -2px -2px 0 #000,
+     0   -2px 0 #000,
+     2px -2px 0 #000,
+     2px  0   0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+    -2px  2px 0 #000,
+    -2px  0   0 #000;
   z-index: 4;
   font-family: 'Runescape';
-  font-size: 18px;
+  font-size: 22px;
+  letter-spacing: 1.5px;
 `;
 
 function InventoryItem() {
@@ -42,7 +52,14 @@ function InventoryItem() {
           let tempItem = {};
           tempItem.icon = result.icon;
           tempItem.name = result.name;
-          tempItem.count = Math.floor(Math.random() * 1000);
+          const x = (Math.floor(Math.random() * 2) == 0);
+          if(x){
+            tempItem.count = Math.floor(Math.random() * 1000);
+          } else {
+            tempItem.count = 1;
+          }
+
+
           setItem(tempItem);
         },
         // Note: it's important to handle errors here
@@ -60,7 +77,7 @@ function InventoryItem() {
 
   return (
     <InventItem>
-      {item && <ItemCount>{item.count}</ItemCount> }
+      {item && item.count > 1 && <ItemCount>{item.count}</ItemCount> }
       {item && <img src={`data:image/png;base64,${item.icon}`} alt="" />}
     </InventItem>
   );

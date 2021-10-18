@@ -4,8 +4,8 @@ import InventoryItem from './InventoryItem';
 
 const BackpackOuter = styled.div`
   position: absolute;
-  top: 41.5vh;
-  right: 4vw;
+  top: 41vh;
+  right: 4.5vw;
   width: 22vw;
   z-index: 6;
   padding: 10px;

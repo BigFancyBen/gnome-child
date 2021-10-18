@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const VideoBG = styled.video`
     position: absolute;
-    top: 2.2vh;
+    top: .9vh;
     left: .5vw;
-    height: 66vh;
+    height: 66.5vh;
     width: 67vw;
     object-fit: cover;
     transform: scaleX(-1);
