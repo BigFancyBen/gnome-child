@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SocialItem from './SocialItem';
+import Followers from './Followers';
 
 const MinimapOuter = styled.div`
     color: #fff000;
@@ -16,6 +17,7 @@ const MinimapOuter = styled.div`
 function Minimap() {
   return (
     <MinimapOuter>
+      <Followers />
       <SocialItem cta={"Folow me on TikTok @"} icon={"tiktok"} />
       <SocialItem cta={"Folow me on Youtube @"} icon={"youtube"} />
       <SocialItem cta={"Yellow Text"} social={"Black Background"} />
