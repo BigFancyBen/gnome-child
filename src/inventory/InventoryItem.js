@@ -52,14 +52,12 @@ function InventoryItem() {
           let tempItem = {};
           tempItem.icon = result.icon;
           tempItem.name = result.name;
-          const x = (Math.floor(Math.random() * 2) == 0);
+          const x = (Math.floor(Math.random() * 2) === 0);
           if(x){
             tempItem.count = Math.floor(Math.random() * 1000);
           } else {
             tempItem.count = 1;
           }
-
-
           setItem(tempItem);
         },
         // Note: it's important to handle errors here
@@ -72,13 +70,15 @@ function InventoryItem() {
   }, [])
 
   useEffect(() => {
-    console.log(item);
-  }, [item])
+    if(error !== null){
+      console.log(error);
+    }
+  }, [error])
 
   return (
     <InventItem>
       {item && item.count > 1 && <ItemCount>{item.count}</ItemCount> }
-      {item && <img src={`data:image/png;base64,${item.icon}`} alt="" />}
+      {item && item.icon && <img src={`data:image/png;base64,${item.icon}`} alt="" />}
     </InventItem>
   );
 }
