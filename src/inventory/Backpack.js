@@ -7,7 +7,7 @@ const BackpackOuter = styled.div`
   top: 41vh;
   right: 4.5vw;
   width: 22vw;
-  z-index: 6;
+  z-index: 21;
   padding: 10px;
 `;
 

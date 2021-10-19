@@ -8,7 +8,7 @@ const ImageWrapper = styled.div`
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 5;
+  z-index: 20;
   img {
     height: 100%;
     width: 100%;

@@ -35,7 +35,7 @@ const ItemCount = styled.div`
      0    2px 0 #000,
     -2px  2px 0 #000,
     -2px  0   0 #000;
-  z-index: 4;
+  z-index: 21;
   font-family: 'Runescape';
   font-size: 22px;
   letter-spacing: 1.5px;
