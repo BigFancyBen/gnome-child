@@ -4,12 +4,13 @@ import '../images/tiktok.png';
 import '../images/youtube.png';
 
 const Outer = styled.div`
-  width: 100%;
+  min-width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 5;
 `;
 
 const SocialWrapper = styled.div`

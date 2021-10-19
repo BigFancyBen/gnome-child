@@ -1,26 +1,32 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useState, useEffect} from 'react';
 import SocialItem from './SocialItem';
 import Followers from './Followers';
-
-const MinimapOuter = styled.div`
-    color: #fff000;
-    position: absolute;
-    top: 1.9vh;
-    right: 10vh;
-    width: 28.6vh;
-    background-color: black;
-    height: 30vh;
-`;
+import {MinimapOuter, MinimapBackground, CarouselWrapper} from './MinimapStyles';
 
 
 function Minimap() {
+ const [index, setIndex] = useState(0);
+ const socialLength = 3;
+
+  useEffect(() => {
+    setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === socialLength - 1 ? 0 : prevIndex + 1
+        ),
+      10000
+    );
+  }, [index]);
+
   return (
     <MinimapOuter>
       <Followers />
-      <SocialItem cta={"Folow me on TikTok @"} icon={"tiktok"} />
-      <SocialItem cta={"Folow me on Youtube @"} icon={"youtube"} />
-      <SocialItem cta={"Yellow Text"} social={"Black Background"} />
+      <MinimapBackground />
+      <CarouselWrapper style={{ transform: `translateX(${-index * 100}%)` }}>
+        <SocialItem cta={"Folow me on TikTok @"} icon={"tiktok"} />
+        <SocialItem cta={"Folow me on Youtube @"} icon={"youtube"} />
+        <SocialItem cta={"Yellow Text"} social={"Black Background"} />
+      </CarouselWrapper>
     </MinimapOuter>
   );
 }
