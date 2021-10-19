@@ -5,6 +5,9 @@ import VideoBackground from './video/VideoBackground';
 import Backpack from './inventory/Backpack';
 import Minimap from './minimap/Minimap';
 
+import Chat from './chat/Chat';
+
+
 function App() {
   return (
     <div className="App">
@@ -12,6 +15,7 @@ function App() {
       <Minimap />
       <VideoBackground />
       <Backpack />
+      <Chat />
     </div>
   );
 }

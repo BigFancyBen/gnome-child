@@ -27,17 +27,17 @@ const ItemCount = styled.div`
   color: #fff000;
   /* text-shadow: 2px 2px 2px #000, 1px 1px 1px #000; */
   text-shadow:
-    -2px -2px 0 #000,
-     0   -2px 0 #000,
-     2px -2px 0 #000,
-     2px  0   0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-    -2px  2px 0 #000,
-    -2px  0   0 #000;
+    -1px -1px 0 #000,
+     0   -1px 0 #000,
+     1px -1px 0 #000,
+     1px  0   0 #000,
+     1px  1px 0 #000,
+     0    1px 0 #000,
+    -1px  1px 0 #000,
+    -1px  0   0 #000;
   z-index: 21;
-  font-family: 'Runescape';
-  font-size: 22px;
+  font-family: 'Runescape Chat';
+  font-size: 21px;
   letter-spacing: 1.5px;
 `;
 
