@@ -4,9 +4,8 @@ import Screen from './screen/Screen';
 import VideoBackground from './video/VideoBackground';
 import Backpack from './inventory/Backpack';
 import Minimap from './minimap/Minimap';
-
 import Chat from './chat/Chat';
-
+import Clock from './clock/Clock';
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
       <VideoBackground />
       <Backpack />
       <Chat />
+      <Clock />
     </div>
   );
 }
