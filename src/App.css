@@ -27,8 +27,17 @@
     font-display: swap;
   }
 
-.App {
+  @font-face {
+    font-family: 'Runescape NPC Chat';
+    src: local('Runescape-NPC-Chat'), url(./font/runescape-npc-chat.woff2) format('woff2'),
+         local('Runescape-NPC-Chat'), url(./font/runescape-npc-chat.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 
+
+.App {
   text-align: center;
   font-family: 'Runescape';
 }

@@ -6,6 +6,7 @@ import Backpack from './inventory/Backpack';
 import Minimap from './minimap/Minimap';
 import Chat from './chat/Chat';
 import Clock from './clock/Clock';
+import LevelUp from './levelup/Levelup';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Backpack />
       <Chat />
       <Clock />
+      <LevelUp />
     </div>
   );
 }
