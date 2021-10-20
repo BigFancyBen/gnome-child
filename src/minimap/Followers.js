@@ -35,7 +35,7 @@ function Followers() {
       })
     }
     getFollowers()
-    const interval = setInterval(() => getFollowers(), 10000)
+    const interval = setInterval(() => getFollowers(), 60000)
     return () => {
       clearInterval(interval);
     }
@@ -43,7 +43,7 @@ function Followers() {
 
   useEffect(() => {
     if(followers.length === 0){ return;}
-    console.log(followers);
+    //console.log(followers);
   }, [followers])
 
   return (

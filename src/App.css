@@ -79,4 +79,5 @@
 
 body{
   font-family: 'Runescape';
+  user-select: none;
 }

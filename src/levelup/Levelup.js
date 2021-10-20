@@ -6,7 +6,7 @@ const LevelUpOuter = styled.div`
   z-index: 70;
   position: absolute;
   left: 0;
-  bottom: 47px;
+  bottom: 48px;
   font-family: 'Runescape NPC Chat';
   background-image: url('./images/woodcuttingLevel.png');
   width: 68vw;
