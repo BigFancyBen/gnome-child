@@ -11,6 +11,10 @@ const Outer = styled.div`
   align-items: center;
   flex-direction: column;
   z-index: 5;
+  &.meme {
+    color: #ffff00;
+    background-color: black;
+  }
 `;
 
 const SocialWrapper = styled.div`
@@ -37,7 +41,7 @@ function SocialItem(props) {
 
 
   return (
-    <Outer>
+    <Outer className={props.type}>
       {
         props.cta && <CtaWrapper>
           {props.cta}

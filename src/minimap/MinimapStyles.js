@@ -1,16 +1,7 @@
-import styled, { keyframes } from 'styled-components';
-
-const gradientRotate = keyframes`
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-`;
+import styled from 'styled-components';
 
 export const MinimapOuter = styled.div`
-  color: #fff000;
+  color: #222;
   position: absolute;
   top: 1.9vh;
   right: 10vh;
@@ -25,12 +16,10 @@ export const MinimapBackground = styled.div`
   left:-10%;
   height: 115%;
   width: 115%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  animation-duration: 20s;
-  animation-name: ${gradientRotate};
-  animation-iteration-count: infinite;
+  background-image: url('./images/woodcuttingLevel.png');
+  background-size: 500px 343px;;
+  background-position: 80% 50%;
   z-index: 4;
-  transform: rotate(0deg);
 `;
 
 export const CarouselWrapper = styled.div`

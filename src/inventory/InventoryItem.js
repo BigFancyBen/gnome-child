@@ -37,8 +37,7 @@ const ItemCount = styled.div`
     -1px  0   0 #000;
   z-index: 21;
   font-family: 'Runescape Chat';
-  font-size: 21px;
-  letter-spacing: 1.5px;
+  font-size: 25px;
 `;
 
 function InventoryItem() {

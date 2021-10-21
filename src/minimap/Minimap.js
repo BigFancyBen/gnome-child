@@ -25,7 +25,7 @@ function Minimap() {
       <CarouselWrapper style={{ transform: `translateX(${-index * 100}%)` }}>
         <SocialItem cta={"Folow me on TikTok @"} icon={"tiktok"} />
         <SocialItem cta={"Folow me on Youtube @"} icon={"youtube"} />
-        <SocialItem cta={"Yellow Text"} social={"Black Background"} />
+        <SocialItem cta={"Yellow Text"} social={"Black Background"} type="meme"  />
       </CarouselWrapper>
     </MinimapOuter>
   );
