@@ -21,7 +21,7 @@ function Screen() {
 
   return (
     <ImageWrapper>
-      <img src="./images/rsframe.png" alt="" srcset="" />
+      <img src="./images/rsframe.png" alt="" />
     </ImageWrapper>
   );
 }

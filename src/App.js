@@ -8,6 +8,7 @@ import Chat from './chat/Chat';
 import Clock from './clock/Clock';
 import LevelUp from './levelup/Levelup';
 import XpDrop from './xpdrop/XpDrop';
+import Joycon from './joycon/JoyconInt';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Clock />
       <LevelUp />
       <XpDrop />
+      <Joycon />
     </div>
   );
 }

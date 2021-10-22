@@ -37,6 +37,7 @@ const XpDropXp = styled.div`
 function XpDrop(){
   const [dropShowing, setDropShowing] = useState(false);
   const curXpDrop = useRef(null)
+  window.addEventListener('aPressed', e => setDropShowing(true));
 
   useEffect(() => {
     if(dropShowing === false){ return false}
