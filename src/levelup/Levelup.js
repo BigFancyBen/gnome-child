@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import '../images/woodcuttingLevel.png';
 
@@ -45,14 +45,33 @@ const ClickContinue = styled.div`
 
 function LevelUp(){
 
+  const [levelShowing, setLevelShowing] = useState(false);
+  const [curLevel, setCurLevel] = useState(1);
+  const curLevelUp = useRef(null)
+
+  useEffect(() => {
+    if(levelShowing === false){ return false}
+    setCurLevel(curLevel + 1);
+    curLevelUp.current.style.display = 'flex';
+    setTimeout(
+      function() {
+        setLevelShowing(false);
+      }, 5000);
+  }, [levelShowing])
+
   return (
-    <LevelUpOuter>
-      <LvlUpMessage>
-        <Congrats>Congratulations, you just advanced a Woodcutting level.</Congrats>
-        <YourLevel>Your Woodcutting level is now 5.</YourLevel>
-        <ClickContinue>Click here to continue</ClickContinue>
-      </LvlUpMessage>
-    </LevelUpOuter>
+    <React.Fragment>
+    { levelShowing &&
+      <LevelUpOuter ref={curLevelUp}>
+        <LvlUpMessage>
+          <Congrats>Congratulations, you just advanced a Woodcutting level.</Congrats>
+          <YourLevel>Your Woodcutting level is now {curLevel}.</YourLevel>
+          <ClickContinue>Click here to continue</ClickContinue>
+        </LvlUpMessage>
+      </LevelUpOuter>
+    }
+      <h1 style={{zIndex: "99", position: "absolute", color: "white", top:"50px"}} onClick={setLevelShowing}>Level Up</h1>
+    </React.Fragment>
   );
 }
 export default LevelUp;

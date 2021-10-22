@@ -7,6 +7,7 @@ import Minimap from './minimap/Minimap';
 import Chat from './chat/Chat';
 import Clock from './clock/Clock';
 import LevelUp from './levelup/Levelup';
+import XpDrop from './xpdrop/XpDrop';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Chat />
       <Clock />
       <LevelUp />
+      <XpDrop />
     </div>
   );
 }
