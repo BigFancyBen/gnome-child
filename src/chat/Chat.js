@@ -29,7 +29,7 @@ const ChatMessage = styled.div`
   flex-direction: row;
   font-family: 'Runescape Chat';
   font-size: 29px;
-  margin: 1px 10px;
+  margin: -1px 10px;
   height: fit-content;
 `;
 
@@ -80,7 +80,7 @@ function Chat() {
   return (
     <ChatWrapper>
       {
-        chatMessages.slice(0, 7).map(chat =>
+        chatMessages.slice(0, 8).map(chat =>
           <ChatMessage><Chatter>{chat.username}: </Chatter><ChatterMessage>{chat.message}</ChatterMessage></ChatMessage>
         )
       }

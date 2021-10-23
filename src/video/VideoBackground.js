@@ -8,7 +8,7 @@ const VideoBG = styled.video`
     height: 66.5vh;
     width: 67vw;
     object-fit: cover;
-    transform: scaleX(-1);
+    //transform: scaleX(-1);
     z-index: 1;
 `;
 

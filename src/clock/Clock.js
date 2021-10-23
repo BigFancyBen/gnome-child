@@ -2,11 +2,21 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 const ClockDiv = styled.div`
   position: absolute;
-  bottom: 6px;
-  left: 58.5vw;
+  bottom: 5px;
+  left: 57vw;
+  z-index: 55;
+  width: 157px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ClockTime = styled.div`
   font-family: 'Runescape Chat';
-  font-size: 29px;
+  font-size: 24px;
   color: white;
+  margin-bottom: -6px;
   text-shadow:
     -1px -1px 0 #000,
      0   -1px 0 #000,
@@ -16,9 +26,7 @@ const ClockDiv = styled.div`
      0    1px 0 #000,
     -1px  1px 0 #000,
     -1px  0   0 #000;
-    z-index: 55;
 `;
-
 function Clock(){
   const [date, setDate] = useState(new Date());
   
@@ -33,7 +41,7 @@ function Clock(){
   }, []);
   return (
     <ClockDiv>
-      {date.toLocaleTimeString()}
+      <ClockTime>{date.toLocaleTimeString()}</ClockTime>
     </ClockDiv>
   );
 }

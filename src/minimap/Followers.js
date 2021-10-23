@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const FollowerAlert = styled.div`
   z-index: 9;
-  background-color: black;
+  background-image: url('./images/woodcuttingLevel.png');
+  background-size: 500px 343px;;
+  background-position: 80% 50%;
   color: #fff000;
   position: absolute;
   height: 100%;
@@ -55,7 +57,7 @@ function Followers() {
   const [followers, setFollowers] = useState([]);
   const [newFollows, setNewFollows] = useState([]);
   const [followAlerts, setFollowAlerts] = useState([]);
-
+  
   useEffect(() => {
     function getFollowers() {
       fetch("https://api.twitch.tv/helix/users/follows?to_id=27871519", {
