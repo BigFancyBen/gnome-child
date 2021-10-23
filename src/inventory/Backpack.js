@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import InventoryItem from './InventoryItem';
 
@@ -18,35 +18,28 @@ const BackpackDiv = styled.div`
   flex-wrap: wrap;
 `;
 
-function Backpack() {
+function Backpack(props) {
+  const [backpackArray, setBackpackArray] = useState([]);
+
+  useEffect(() => {
+    if(props.inventory.length === 0){return}
+    let invItems = [];
+    let curItem = 0;
+    for(let i = 0; i<28 ; i++){
+      if(props.inventory[curItem]?.index === i){
+        invItems.push(<InventoryItem key={`slot-${i}`}id={props.inventory[curItem].id} stackSize={props.inventory[curItem].stackSize} />);
+        curItem++;
+      } else {
+        invItems.push(<InventoryItem key={`slot-${i}`}/>);
+      }
+    }
+    setBackpackArray(invItems);
+  }, [props.inventory])
 
   return (
     <BackpackOuter>
       <BackpackDiv>
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
-        <InventoryItem />
+        {backpackArray}
       </BackpackDiv>
     </BackpackOuter>
   );

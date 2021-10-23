@@ -13,6 +13,13 @@ const XpDropOuter = styled.div`
   align-items: center;
   transition: transform 2s linear;
   transform: translateY(0);
+
+  &.visible{
+    visibility: visible;
+  }
+  &.hidden{
+    visibility: hidden;
+  }
 `;
 
 const XpDropXp = styled.div`
@@ -34,29 +41,49 @@ const XpDropXp = styled.div`
 
 
 
-function XpDrop(){
-  const [dropShowing, setDropShowing] = useState(false);
-  const curXpDrop = useRef(null)
-  window.addEventListener('aPressed', e => setDropShowing(true));
+function XpDrop(props){
+  const [dropShowing, setDropShowing] = useState(true);
+  const curXpDrop = useRef(null);
+  const [newXp, setNewXp] = useState(null);
+
+  // useEffect(() => {
+  //   if(dropShowing === false){ return false}
+  //   setTimeout(
+  //     function() {
+  //       curXpDrop.current.style.transform = '';
+  //       setNewXp(null);
+  //       //setDropShowing(false);
+  //     }, 2000);
+  // }, [dropShowing])
 
   useEffect(() => {
-    if(dropShowing === false){ return false}
-    curXpDrop.current.style.transform = 'translateY(-300px)';
+    if(curXpDrop.current !== null && curXpDrop.current !== undefined){
+      curXpDrop.current.style.transform = 'translateY(-300px)';
+      setNewXp(props.xp[props.xp.length - 1]);
+      setDropShowing(true);
+    }
+  }, [props.xp])
+
+  useEffect(() => {
+    if(newXp === null){
+      //setDropShowing(false);
+    }
     setTimeout(
       function() {
-        setDropShowing(false);
+
+        setNewXp(null);
+        if(curXpDrop.current !== null){
+          curXpDrop.current.style.transform = 'translateY(0)';
+        }
       }, 2000);
-  }, [dropShowing])
+  }, [newXp])
 
   return (
     <React.Fragment>
-      {dropShowing && 
-        <XpDropOuter ref={curXpDrop}>
-          <img src="./images/woodcutting.png" alt="" />
-          <XpDropXp>+30</XpDropXp>
-        </XpDropOuter>
-      }
-      <h1 style={{zIndex: "99", position: "absolute", color: "white"}} onClick={setDropShowing}>XP Drop</h1>
+      <XpDropOuter className={newXp ? 'visible' : 'hidden'} ref={curXpDrop}>
+        <img src="./images/woodcutting.png" alt="" />
+        <XpDropXp>{`+${newXp}`}</XpDropXp>
+      </XpDropOuter>
     </React.Fragment>
   );
 }

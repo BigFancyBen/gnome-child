@@ -22,7 +22,7 @@ function JoyconInt() {
       }
     }
     doButtons()
-    const interval = setInterval(() => doButtons(), 100)
+    const interval = setInterval(() => doButtons(), 600)
     return () => {
       clearInterval(interval);
     }

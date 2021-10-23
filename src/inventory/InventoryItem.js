@@ -8,7 +8,7 @@ const InventItem = styled.div`
   padding-top: calc( 25% - 18px );
   height: 0;
   position: relative;
-  margin: 9px;
+  margin: 3px 9px;
 
   img {
     position: absolute;
@@ -40,33 +40,31 @@ const ItemCount = styled.div`
   font-size: 25px;
 `;
 
-function InventoryItem() {
+function InventoryItem(props) {
   const [item, setItem] = useState();
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    fetch(`${api}${Math.floor(Math.random() * 1000)}`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          let tempItem = {};
-          tempItem.icon = result.icon;
-          tempItem.name = result.name;
-          const x = (Math.floor(Math.random() * 2) === 0);
-          if(x){
-            tempItem.count = Math.floor(Math.random() * 1000);
-          } else {
-            tempItem.count = 1;
+    if(props.id){    
+      fetch(`${api}${props.id}`)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            let tempItem = {};
+            tempItem.icon = result.icon;
+            tempItem.name = result.name;
+            tempItem.count = props.stackSize;
+            setItem(tempItem);
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            setError(error);
           }
-          setItem(tempItem);
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setError(error);
-        }
-      )
-  }, [])
+        )
+    }
+  }, [props])
 
   useEffect(() => {
     if(error !== null){

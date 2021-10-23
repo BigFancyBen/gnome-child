@@ -43,7 +43,7 @@ const ClickContinue = styled.div`
   color: #0000ff;
 `;
 
-function LevelUp(){
+function LevelUp(props){
 
   const [levelShowing, setLevelShowing] = useState(false);
   const [curLevel, setCurLevel] = useState(1);
@@ -59,18 +59,23 @@ function LevelUp(){
       }, 5000);
   }, [levelShowing])
 
+  useEffect(() => {
+    console.log(props.levelsGained);
+    if(props.levelsGained === undefined){ return false}
+      setLevelShowing(true);
+  }, [props.levelsGained])
+
   return (
     <React.Fragment>
     { levelShowing &&
       <LevelUpOuter ref={curLevelUp}>
         <LvlUpMessage>
           <Congrats>Congratulations, you just advanced a Woodcutting level.</Congrats>
-          <YourLevel>Your Woodcutting level is now {curLevel}.</YourLevel>
+          <YourLevel>Your Woodcutting level is now {props.levelsGained}.</YourLevel>
           <ClickContinue>Click here to continue</ClickContinue>
         </LvlUpMessage>
       </LevelUpOuter>
     }
-      <h1 style={{zIndex: "99", position: "absolute", color: "white", top:"50px"}} onClick={setLevelShowing}>Level Up</h1>
     </React.Fragment>
   );
 }

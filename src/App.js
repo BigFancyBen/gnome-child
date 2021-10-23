@@ -9,6 +9,7 @@ import Clock from './clock/Clock';
 import LevelUp from './levelup/Levelup';
 import XpDrop from './xpdrop/XpDrop';
 import Joycon from './joycon/JoyconInt';
+import Poller from './poller/Poller';
 
 function App() {
   return (
@@ -16,11 +17,9 @@ function App() {
       <Screen />
       <Minimap />
       <VideoBackground />
-      <Backpack />
+      <Poller />
       <Chat />
       <Clock />
-      <LevelUp />
-      <XpDrop />
       <Joycon />
     </div>
   );
