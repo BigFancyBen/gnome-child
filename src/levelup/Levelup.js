@@ -60,10 +60,10 @@ function LevelUp(props){
   }, [levelShowing])
 
   useEffect(() => {
-    console.log(props.levelsGained);
-    if(props.levelsGained === undefined){ return false}
+    if(props.levelUp > 0) {
       setLevelShowing(true);
-  }, [props.levelsGained])
+    } 
+  }, [props.levelUp])
 
   return (
     <React.Fragment>
@@ -71,7 +71,7 @@ function LevelUp(props){
       <LevelUpOuter ref={curLevelUp}>
         <LvlUpMessage>
           <Congrats>Congratulations, you just advanced a Woodcutting level.</Congrats>
-          <YourLevel>Your Woodcutting level is now {props.levelsGained}.</YourLevel>
+          <YourLevel>Your Woodcutting level is now {props.levelUp}.</YourLevel>
           <ClickContinue>Click here to continue</ClickContinue>
         </LvlUpMessage>
       </LevelUpOuter>

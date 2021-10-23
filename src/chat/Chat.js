@@ -74,7 +74,7 @@ function Chat() {
 
 
   useEffect(() => {
-    console.log(chatMessages);
+    //console.log(chatMessages);
   }, [chatMessages])
 
   return (
