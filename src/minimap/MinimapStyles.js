@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const MinimapOuter = styled.div`
   color: #222;
   position: absolute;
-  top: 1.9vh;
-  right: 10vh;
-  width: 28.6vh;
-  height: 30vh;
+  top: 19px;
+  right: 95px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
 `;
 

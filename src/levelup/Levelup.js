@@ -9,8 +9,8 @@ const LevelUpOuter = styled.div`
   bottom: 48px;
   font-family: 'Runescape NPC Chat';
   background-image: url('./images/woodcuttingLevel.png');
-  width: 68vw;
-  height: 28vh;
+  width: 1040px;
+  height: 282px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -27,6 +27,7 @@ const LvlUpMessage = styled.div`
   font-size: 60px;
   width: 85%;
   height: 85%;
+  margin-right: 20px;
 `;
 
 const Congrats = styled.div`

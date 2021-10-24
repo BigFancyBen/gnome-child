@@ -4,7 +4,7 @@ const tmi = require('react-tmi');
 
 const ChatName = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 2px;
   left: 32px;
   font-family: 'Runescape Chat';
   font-size: 29px;
@@ -15,9 +15,9 @@ const ChatWrapper = styled.div`
   bottom: 58px;
   left: 15px;
   z-index: 60;
-  width: 66vw;
+  width: 1011px;
   display: flex;
-  height: 21.6vh;
+  height: 225px;
   padding-bottom: 36px;
   align-items: flex-start;
   flex-direction: column-reverse;

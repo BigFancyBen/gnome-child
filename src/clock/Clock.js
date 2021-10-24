@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const ClockDiv = styled.div`
   position: absolute;
   bottom: 5px;
-  left: 57vw;
+  left: 870px;
   z-index: 55;
   width: 157px;
   height: 42px;

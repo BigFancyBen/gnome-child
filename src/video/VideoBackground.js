@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const VideoBG = styled.video`
     position: absolute;
-    top: .9vh;
-    left: .5vw;
-    height: 66.5vh;
-    width: 67vw;
+    top: 8px;
+    left: 5px;
+    height: 670px;
+    width: 1028px;
     object-fit: cover;
     //transform: scaleX(-1);
     z-index: 1;

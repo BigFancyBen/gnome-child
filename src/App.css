@@ -40,6 +40,9 @@
 .App {
   text-align: center;
   font-family: 'Runescape';
+  height: 1007px;
+  width: 1531px;
+  position: relative;
 }
 
 .App-logo {
@@ -80,4 +83,5 @@
 body{
   font-family: 'Runescape';
   user-select: none;
+  overflow: hidden;
 }

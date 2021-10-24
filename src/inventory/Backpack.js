@@ -4,9 +4,9 @@ import InventoryItem from './InventoryItem';
 
 const BackpackOuter = styled.div`
   position: absolute;
-  top: 41vh;
-  right: 4.5vw;
-  width: 22vw;
+  top: 412px;
+  right: 66px;
+  width: 336px;
   z-index: 21;
   padding: 10px;
 `;
