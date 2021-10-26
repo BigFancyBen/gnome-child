@@ -20,7 +20,6 @@ while True:
     zMin = joycon.direction[2]
 
     for i in range(40):
-        # print(joycon.get_status()['accel'])
         xMax = max(xMax, joycon.direction[0])
         yMax = max(yMax, joycon.direction[1])
         zMax = max(zMax, joycon.direction[2])
@@ -30,10 +29,10 @@ while True:
         zMin = min(zMin, joycon.direction[2])
         time.sleep(1/30)
 
-    print(xMax+abs(xMin),yMax+abs(yMin),zMax+abs(zMin))
-    xChop = xMax+abs(xMin) > 1 if 1 else 0
+    print(round(xMax-abs(xMin), 3),round(yMax+abs(yMin), 3),round(zMax+abs(zMin), 3))
+    xChop = xMax-abs(xMin) > .5 if 1 else 0
     yChop = yMax+abs(yMin) > 1 if 1 else 0
-    zChop = zMax+abs(zMin) > 1 if 1 else 0
+    zChop = zMax+abs(zMin) > .5 if 1 else 0
     if( xChop + yChop + zChop >= 2):
       print('chop')
       playsound(chopSound)

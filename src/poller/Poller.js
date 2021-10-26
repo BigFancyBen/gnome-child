@@ -22,6 +22,19 @@ function Poller() {
     }
   }
   useEffect(() => {
+    fetch("http://localhost:6969/sendAction", {
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": "{\"action\":\"LIST_INVENTORY\"}"
+    })
+    .then(response => {
+      console.log(response);
+    })
+    .catch(err => {
+      console.error(err);
+    });
     setInterval(
       function() {
         fetch("http://localhost:6969/clientPoll", {
