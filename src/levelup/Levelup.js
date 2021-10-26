@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import '../images/woodcuttingLevel.png';
+import '../sounds/wc-level.ogg';
 
 const LevelUpOuter = styled.div`
   z-index: 70;
@@ -49,11 +50,13 @@ function LevelUp(props){
   const [levelShowing, setLevelShowing] = useState(false);
   const [curLevel, setCurLevel] = useState(1);
   const curLevelUp = useRef(null)
+  const audio = new Audio('./sounds/wc-level.ogg');
 
   useEffect(() => {
     if(levelShowing === false){ return false}
     setCurLevel(curLevel + 1);
     curLevelUp.current.style.display = 'flex';
+    audio.play();
     setTimeout(
       function() {
         setLevelShowing(false);

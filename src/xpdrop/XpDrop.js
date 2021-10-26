@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import '../images/woodcutting.png';
+import '../sounds/tree-knocked.wav';
 
 const XpDropOuter = styled.div`
   z-index: 70;
@@ -45,19 +46,11 @@ function XpDrop(props){
   const [dropShowing, setDropShowing] = useState(true);
   const curXpDrop = useRef(null);
   const [newXp, setNewXp] = useState(null);
-
-  // useEffect(() => {
-  //   if(dropShowing === false){ return false}
-  //   setTimeout(
-  //     function() {
-  //       curXpDrop.current.style.transform = '';
-  //       setNewXp(null);
-  //       //setDropShowing(false);
-  //     }, 2000);
-  // }, [dropShowing])
+  const audio = new Audio('./sounds/tree-knocked.wav');
 
   useEffect(() => {
     if(curXpDrop.current !== null && curXpDrop.current !== undefined){
+      audio.play();
       curXpDrop.current.style.transform = 'translateY(-300px)';
       setNewXp(props.xp[props.xp.length - 1]);
       setDropShowing(true);
