@@ -20,6 +20,12 @@ function Poller() {
     if(data.levelsGained > 0){
       setLevelUp(data.levelsGained);
     }
+    if(data.banking){
+      console.log("banking");
+    }
+    if(data.bankedLoot > 0){
+      console.log(data.bankedLoot);
+    }
   }
   useEffect(() => {
     fetch("http://localhost:6969/sendAction", {

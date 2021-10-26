@@ -2,13 +2,9 @@ import './App.css';
 import React from 'react';
 import Screen from './screen/Screen';
 import VideoBackground from './video/VideoBackground';
-import Backpack from './inventory/Backpack';
 import Minimap from './minimap/Minimap';
 import Chat from './chat/Chat';
 import Clock from './clock/Clock';
-import LevelUp from './levelup/Levelup';
-import XpDrop from './xpdrop/XpDrop';
-import Joycon from './joycon/JoyconInt';
 import Poller from './poller/Poller';
 
 function App() {
@@ -20,7 +16,6 @@ function App() {
       <Poller />
       <Chat />
       <Clock />
-      <Joycon />
     </div>
   );
 }
