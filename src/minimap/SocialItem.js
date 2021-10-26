@@ -22,6 +22,7 @@ const SocialWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-right: 5px;
 `;
 
 const SocialHandle = styled.div`

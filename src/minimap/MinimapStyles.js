@@ -6,7 +6,7 @@ export const MinimapOuter = styled.div`
   top: 19px;
   right: 95px;
   width: 300px;
-  height: 300px;
+  height: 305px;
   overflow: hidden;
 `;
 
