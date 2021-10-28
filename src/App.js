@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
 import Screen from './screen/Screen';
-import VideoBackground from './video/VideoBackground';
 import Minimap from './minimap/Minimap';
 import Chat from './chat/Chat';
 import Clock from './clock/Clock';
@@ -12,7 +11,6 @@ function App() {
     <div className="App">
       <Screen />
       <Minimap />
-      <VideoBackground />
       <Poller />
       <Chat />
       <Clock />

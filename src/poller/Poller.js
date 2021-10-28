@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import Backpack from '../inventory/Backpack';
 import LevelUp from '../levelup/Levelup';
 import XpDrop from '../xpdrop/XpDrop';
+//import VideoBackground from '../video/VideoBackground';
+//<VideoBackground curCam={cam} />
 const OBSWebSocket = require('obs-websocket-js');
 
 
@@ -9,6 +11,7 @@ function Poller() {
   const [inventory, setInventory] = useState([]);
   const [xpDrop, setXpDrop] = useState([]);
   const [levelUp, setLevelUp] = useState(null);
+  const [cam, setCam] = useState("main");
   const obs = new OBSWebSocket();
 
   // You must add this handler to avoid uncaught exceptions.
@@ -29,11 +32,13 @@ function Poller() {
         obs.send('SetCurrentScene', {
           'scene-name': "Banking Scene"
         });
+        setCam("bank");
       }
       if(data.banking === "back"){
         obs.send('SetCurrentScene', {
           'scene-name': "Tree Scene"
         });
+        setCam("main");
       }
     }
     if(data.bankedLoot > 0){
@@ -49,8 +54,6 @@ function Poller() {
     })
     .then(() => {
         console.log(`obs connected`);
-  
-        setObs(obs);
     })
     .catch(err => { 
         console.log(err);
