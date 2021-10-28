@@ -30,7 +30,7 @@ function Backpack(props) {
         invItems.push(<InventoryItem key={`slot-${i}`}id={props.inventory[curItem].id} stackSize={props.inventory[curItem].stackSize} />);
         curItem++;
       } else {
-        invItems.push(<InventoryItem key={`slot-${i}`}/>);
+        invItems.push(<InventoryItem key={`slot-${i}`} id={false} stackSize={1} />);
       }
     }
     setBackpackArray(invItems);

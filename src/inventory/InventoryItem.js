@@ -74,8 +74,8 @@ function InventoryItem(props) {
 
   return (
     <InventItem>
-      {item && item.count > 1 && <ItemCount>{item.count}</ItemCount> }
-      {item && item.icon && <img src={`data:image/png;base64,${item.icon}`} alt="" />}
+      {props.id && item && item.count > 1 && <ItemCount>{item.count}</ItemCount> }
+      {props.id && item && item.icon && <img src={`data:image/png;base64,${item.icon}`} alt="" />}
     </InventItem>
   );
 }

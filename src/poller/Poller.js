@@ -21,7 +21,7 @@ function Poller() {
       setLevelUp(data.levelsGained);
     }
     if(data.banking){
-      console.log("banking");
+      console.log(data.banking);
     }
     if(data.bankedLoot > 0){
       console.log(data.bankedLoot);
@@ -57,7 +57,7 @@ function Poller() {
         .catch(err => {
           console.error(err);
         });
-      }, 100);
+      }, 200);
 
   }, [])
 
