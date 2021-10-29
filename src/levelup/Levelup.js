@@ -48,13 +48,11 @@ const ClickContinue = styled.div`
 function LevelUp(props){
 
   const [levelShowing, setLevelShowing] = useState(false);
-  const [curLevel, setCurLevel] = useState(1);
   const curLevelUp = useRef(null)
   const audio = new Audio('./sounds/wc-level.ogg');
 
   useEffect(() => {
     if(levelShowing === false){ return false}
-    setCurLevel(curLevel + 1);
     curLevelUp.current.style.display = 'flex';
     audio.play();
     setTimeout(
