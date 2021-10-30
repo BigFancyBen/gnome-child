@@ -1,0 +1,497 @@
+[
+  {
+    "level": 1,
+    "levStarts": 0,
+    "xpNeeded": null
+  },
+  {
+    "level": 2,
+    "levStarts": 83,
+    "xpNeeded": 83
+  },
+  {
+    "level": 3,
+    "levStarts": 174,
+    "xpNeeded": 91
+  },
+  {
+    "level": 4,
+    "levStarts": 276,
+    "xpNeeded": 102
+  },
+  {
+    "level": 5,
+    "levStarts": 388,
+    "xpNeeded": 112
+  },
+  {
+    "level": 6,
+    "levStarts": 512,
+    "xpNeeded": 124
+  },
+  {
+    "level": 7,
+    "levStarts": 650,
+    "xpNeeded": 138
+  },
+  {
+    "level": 8,
+    "levStarts": 801,
+    "xpNeeded": 151
+  },
+  {
+    "level": 9,
+    "levStarts": 969,
+    "xpNeeded": 168
+  },
+  {
+    "level": 10,
+    "levStarts": 1154,
+    "xpNeeded": 185
+  },
+  {
+    "level": 11,
+    "levStarts": 1358,
+    "xpNeeded": 204
+  },
+  {
+    "level": 12,
+    "levStarts": 1584,
+    "xpNeeded": 226
+  },
+  {
+    "level": 13,
+    "levStarts": 1833,
+    "xpNeeded": 249
+  },
+  {
+    "level": 14,
+    "levStarts": 2107,
+    "xpNeeded": 274
+  },
+  {
+    "level": 15,
+    "levStarts": 2411,
+    "xpNeeded": 304
+  },
+  {
+    "level": 16,
+    "levStarts": 2746,
+    "xpNeeded": 335
+  },
+  {
+    "level": 17,
+    "levStarts": 3115,
+    "xpNeeded": 369
+  },
+  {
+    "level": 18,
+    "levStarts": 3523,
+    "xpNeeded": 408
+  },
+  {
+    "level": 19,
+    "levStarts": 3973,
+    "xpNeeded": 450
+  },
+  {
+    "level": 20,
+    "levStarts": 4470,
+    "xpNeeded": 497
+  },
+  {
+    "level": 21,
+    "levStarts": 5018,
+    "xpNeeded": 548
+  },
+  {
+    "level": 22,
+    "levStarts": 5624,
+    "xpNeeded": 606
+  },
+  {
+    "level": 23,
+    "levStarts": 6291,
+    "xpNeeded": 667
+  },
+  {
+    "level": 24,
+    "levStarts": 7028,
+    "xpNeeded": 737
+  },
+  {
+    "level": 25,
+    "levStarts": 7842,
+    "xpNeeded": 814
+  },
+  {
+    "level": 26,
+    "levStarts": 8740,
+    "xpNeeded": 898
+  },
+  {
+    "level": 27,
+    "levStarts": 9730,
+    "xpNeeded": 990
+  },
+  {
+    "level": 28,
+    "levStarts": 10824,
+    "xpNeeded": 1094
+  },
+  {
+    "level": 29,
+    "levStarts": 12031,
+    "xpNeeded": 1207
+  },
+  {
+    "level": 30,
+    "levStarts": 13363,
+    "xpNeeded": 1332
+  },
+  {
+    "level": 31,
+    "levStarts": 14833,
+    "xpNeeded": 1470
+  },
+  {
+    "level": 32,
+    "levStarts": 16456,
+    "xpNeeded": 1623
+  },
+  {
+    "level": 33,
+    "levStarts": 18247,
+    "xpNeeded": 1791
+  },
+  {
+    "level": 34,
+    "levStarts": 20224,
+    "xpNeeded": 1977
+  },
+  {
+    "level": 35,
+    "levStarts": 22406,
+    "xpNeeded": 2182
+  },
+  {
+    "level": 36,
+    "levStarts": 24815,
+    "xpNeeded": 2409
+  },
+  {
+    "level": 37,
+    "levStarts": 27473,
+    "xpNeeded": 2658
+  },
+  {
+    "level": 38,
+    "levStarts": 30408,
+    "xpNeeded": 2935
+  },
+  {
+    "level": 39,
+    "levStarts": 33648,
+    "xpNeeded": 3240
+  },
+  {
+    "level": 40,
+    "levStarts": 37224,
+    "xpNeeded": 3576
+  },
+  {
+    "level": 41,
+    "levStarts": 41171,
+    "xpNeeded": 3947
+  },
+  {
+    "level": 42,
+    "levStarts": 45529,
+    "xpNeeded": 4358
+  },
+  {
+    "level": 43,
+    "levStarts": 50339,
+    "xpNeeded": 4810
+  },
+  {
+    "level": 44,
+    "levStarts": 55649,
+    "xpNeeded": 5310
+  },
+  {
+    "level": 45,
+    "levStarts": 61512,
+    "xpNeeded": 5863
+  },
+  {
+    "level": 46,
+    "levStarts": 67983,
+    "xpNeeded": 6471
+  },
+  {
+    "level": 47,
+    "levStarts": 75127,
+    "xpNeeded": 7144
+  },
+  {
+    "level": 48,
+    "levStarts": 83014,
+    "xpNeeded": 7887
+  },
+  {
+    "level": 49,
+    "levStarts": 91721,
+    "xpNeeded": 8707
+  },
+  {
+    "level": 50,
+    "levStarts": 101333,
+    "xpNeeded": 9612
+  },
+  {
+    "level": 51,
+    "levStarts": 111945,
+    "xpNeeded": 10612
+  },
+  {
+    "level": 52,
+    "levStarts": 123660,
+    "xpNeeded": 11715
+  },
+  {
+    "level": 53,
+    "levStarts": 136594,
+    "xpNeeded": 12934
+  },
+  {
+    "level": 54,
+    "levStarts": 150872,
+    "xpNeeded": 14278
+  },
+  {
+    "level": 55,
+    "levStarts": 166636,
+    "xpNeeded": 15764
+  },
+  {
+    "level": 56,
+    "levStarts": 184040,
+    "xpNeeded": 17404
+  },
+  {
+    "level": 57,
+    "levStarts": 203254,
+    "xpNeeded": 19214
+  },
+  {
+    "level": 58,
+    "levStarts": 224466,
+    "xpNeeded": 21212
+  },
+  {
+    "level": 59,
+    "levStarts": 247886,
+    "xpNeeded": 23420
+  },
+  {
+    "level": 60,
+    "levStarts": 273742,
+    "xpNeeded": 25856
+  },
+  {
+    "level": 61,
+    "levStarts": 302288,
+    "xpNeeded": 28546
+  },
+  {
+    "level": 62,
+    "levStarts": 333804,
+    "xpNeeded": 31516
+  },
+  {
+    "level": 63,
+    "levStarts": 368599,
+    "xpNeeded": 34795
+  },
+  {
+    "level": 64,
+    "levStarts": 407015,
+    "xpNeeded": 38416
+  },
+  {
+    "level": 65,
+    "levStarts": 449428,
+    "xpNeeded": 42413
+  },
+  {
+    "level": 66,
+    "levStarts": 496254,
+    "xpNeeded": 46826
+  },
+  {
+    "level": 67,
+    "levStarts": 547953,
+    "xpNeeded": 51699
+  },
+  {
+    "level": 68,
+    "levStarts": 605032,
+    "xpNeeded": 57079
+  },
+  {
+    "level": 69,
+    "levStarts": 668051,
+    "xpNeeded": 63019
+  },
+  {
+    "level": 70,
+    "levStarts": 737627,
+    "xpNeeded": 69576
+  },
+  {
+    "level": 71,
+    "levStarts": 814445,
+    "xpNeeded": 76818
+  },
+  {
+    "level": 72,
+    "levStarts": 899257,
+    "xpNeeded": 84812
+  },
+  {
+    "level": 73,
+    "levStarts": 992895,
+    "xpNeeded": 93638
+  },
+  {
+    "level": 74,
+    "levStarts": 1096278,
+    "xpNeeded": 103383
+  },
+  {
+    "level": 75,
+    "levStarts": 1210421,
+    "xpNeeded": 114143
+  },
+  {
+    "level": 76,
+    "levStarts": 1336443,
+    "xpNeeded": 126022
+  },
+  {
+    "level": 77,
+    "levStarts": 1475581,
+    "xpNeeded": 139138
+  },
+  {
+    "level": 78,
+    "levStarts": 1629200,
+    "xpNeeded": 153619
+  },
+  {
+    "level": 79,
+    "levStarts": 1798808,
+    "xpNeeded": 169608
+  },
+  {
+    "level": 80,
+    "levStarts": 1986068,
+    "xpNeeded": 187260
+  },
+  {
+    "level": 81,
+    "levStarts": 2192818,
+    "xpNeeded": 206750
+  },
+  {
+    "level": 82,
+    "levStarts": 2421087,
+    "xpNeeded": 228269
+  },
+  {
+    "level": 83,
+    "levStarts": 2673114,
+    "xpNeeded": 252027
+  },
+  {
+    "level": 84,
+    "levStarts": 2951373,
+    "xpNeeded": 278259
+  },
+  {
+    "level": 85,
+    "levStarts": 3258594,
+    "xpNeeded": 307221
+  },
+  {
+    "level": 86,
+    "levStarts": 3597792,
+    "xpNeeded": 339198
+  },
+  {
+    "level": 87,
+    "levStarts": 3972294,
+    "xpNeeded": 374502
+  },
+  {
+    "level": 88,
+    "levStarts": 4385776,
+    "xpNeeded": 413482
+  },
+  {
+    "level": 89,
+    "levStarts": 4842295,
+    "xpNeeded": 456519
+  },
+  {
+    "level": 90,
+    "levStarts": 5346332,
+    "xpNeeded": 504037
+  },
+  {
+    "level": 91,
+    "levStarts": 5902831,
+    "xpNeeded": 556499
+  },
+  {
+    "level": 92,
+    "levStarts": 6517253,
+    "xpNeeded": 614422
+  },
+  {
+    "level": 93,
+    "levStarts": 7195629,
+    "xpNeeded": 678376
+  },
+  {
+    "level": 94,
+    "levStarts": 7944614,
+    "xpNeeded": 748985
+  },
+  {
+    "level": 95,
+    "levStarts": 8771558,
+    "xpNeeded": 826944
+  },
+  {
+    "level": 96,
+    "levStarts": 9684577,
+    "xpNeeded": 913019
+  },
+  {
+    "level": 97,
+    "levStarts": 10692629,
+    "xpNeeded": 1008052
+  },
+  {
+    "level": 98,
+    "levStarts": 11805606,
+    "xpNeeded": 1112977
+  },
+  {
+    "level": 99,
+    "levStarts": 13034431,
+    "xpNeeded": 1228825
+  }
+]

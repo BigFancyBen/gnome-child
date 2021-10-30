@@ -3,6 +3,7 @@ import Backpack from '../inventory/Backpack';
 import LevelUp from '../levelup/Levelup';
 import XpDrop from '../xpdrop/XpDrop';
 import Bank from '../bank/Bank';
+import XpTracker from '../xptracker/XpTracker';
 //import VideoBackground from '../video/VideoBackground';
 //<VideoBackground curCam={cam} />
 
@@ -15,12 +16,13 @@ function Poller() {
   const [xpDrop, setXpDrop] = useState([]);
   const [levelUp, setLevelUp] = useState(null);
   const [bankLoot, setBankLoot] = useState(null);
-  //const [cam, setCam] = useState("main");
+  const [xpLeft, setXpLeft] = useState(null);
+  const [curXp, setCurXp] = useState(null);
   const obs = new OBSWebSocket();
 
   // You must add this handler to avoid uncaught exceptions.
 
-  function handlePoll(data){
+  function handlePoll(data){ 
     if (Object.keys(data).length === 0){return}
     if(data.inventory.length > 0) {
       setInventory(data.inventory);
@@ -30,19 +32,22 @@ function Poller() {
     }
     if(data.levelsGained > 0){
       setLevelUp(data.levelsGained);
+    }if(data.currentXp > 0){
+      setCurXp(data.currentXp);
+    }
+    if(data.xpToLevel > 0){
+      setXpLeft(data.xpToLevel);
     }
     if(data.banking){
       if(data.banking === "banking"){
         obs.send('SetCurrentScene', {
           'scene-name': "Banking Scene"
         });
-        setCam("bank");
       }
       if(data.banking === "back"){
         obs.send('SetCurrentScene', {
           'scene-name': "Tree Scene"
         });
-        setCam("main");
       }
     }
     if(data.bankedLoot > 0){
@@ -96,6 +101,7 @@ function Poller() {
       <LevelUp levelUp={levelUp} />
       <XpDrop xp={xpDrop || undefined} />
       <Bank bankedLoot={bankLoot} />
+      <XpTracker xpToLevel={xpLeft} currentXp={curXp} />
     </div>
   );
 }
