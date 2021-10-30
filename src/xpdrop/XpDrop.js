@@ -50,9 +50,7 @@ function XpDrop(props){
 
   useEffect(() => {
     if(curXpDrop.current !== null && curXpDrop.current !== undefined){
-      if(props.xp > 0){
         audio.play();
-      }
       curXpDrop.current.style.transform = 'translateY(-300px)';
       setNewXp(props.xp[props.xp.length - 1]);
       setDropShowing(true);
@@ -60,9 +58,6 @@ function XpDrop(props){
   }, [props.xp])
 
   useEffect(() => {
-    if(newXp === null){
-      //setDropShowing(false);
-    }
     setTimeout(
       function() {
 
