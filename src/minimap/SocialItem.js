@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import '../images/tiktok.png';
-import '../images/youtube.png';
+import React from "react";
+import styled from "styled-components";
+import "../images/tiktok.png";
+import "../images/youtube.png";
+import "../images/opensauce.png";
 
 const Outer = styled.div`
   min-width: 100%;
@@ -23,6 +24,7 @@ const SocialWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 5px;
+  max-width: 100%;
 `;
 
 const SocialHandle = styled.div`
@@ -36,25 +38,19 @@ const CtaWrapper = styled.div`
   margin-top: -15px;
 `;
 
-
 function SocialItem(props) {
-
-
-
   return (
     <Outer className={props.type}>
-      {
-        props.cta && <CtaWrapper>
-          {props.cta}
-        </CtaWrapper>
-      }
+      {props.cta && <CtaWrapper>{props.cta}</CtaWrapper>}
       <SocialWrapper>
-        {props.icon && 
+        {props.icon && (
           <img src={`./images/${props.icon}.png`} alt="" srcset="" />
-        }
-        <SocialHandle>{ props.social ? props.social : "BigFancyBen"}</SocialHandle>
+        )}
+        <SocialHandle>
+          {props.social ? props.social : "BigFancyBen"}
+        </SocialHandle>
       </SocialWrapper>
-    </Outer>  
+    </Outer>
   );
 }
 

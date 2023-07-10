@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import SocialItem from './SocialItem';
-import Followers from './Followers';
-import {MinimapOuter, MinimapBackground, CarouselWrapper} from './MinimapStyles';
-
+import React, { useState, useEffect } from "react";
+import SocialItem from "./SocialItem";
+import Followers from "./Followers";
+import {
+  MinimapOuter,
+  MinimapBackground,
+  CarouselWrapper,
+} from "./MinimapStyles";
 
 function Minimap() {
- const [index, setIndex] = useState(0);
- const socialLength = 3;
+  const [index, setIndex] = useState(0);
+  const socialLength = 3;
 
   useEffect(() => {
     setTimeout(
@@ -25,7 +28,7 @@ function Minimap() {
       <CarouselWrapper style={{ transform: `translateX(${-index * 100}%)` }}>
         <SocialItem cta={"Follow me on TikTok @"} icon={"tiktok"} />
         <SocialItem cta={"Follow me on Youtube @"} icon={"youtube"} />
-        <SocialItem cta={"Yellow Text"} social={"Black Background"} type="meme"  />
+        <SocialItem cta={""} social=" " icon={"opensauce"} />
       </CarouselWrapper>
     </MinimapOuter>
   );
