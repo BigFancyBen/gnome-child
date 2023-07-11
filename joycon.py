@@ -1,9 +1,13 @@
 from pyjoycon import GyroTrackingJoyCon, get_R_id
-from playsound import playsound
 import time
 import os
 import requests
+import winsound
 chopSound = os.path.abspath('public/sounds/tree-chop.wav')
+url = "http://localhost:6969/sendAction"
+payload = {"action": "CHOP"}
+headers = {"Content-Type": "application/json"}
+
 while True:
   try:
     joycon_id = get_R_id()
@@ -35,9 +39,8 @@ while True:
     zChop = zMax+abs(zMin) > .5 if 1 else 0
     if( xChop + yChop + zChop >= 2):
       print('chop')
-      playsound(chopSound)
-      url = "http://localhost:6969/sendAction"
-      payload = {"action": "CHOP"}
-      headers = {"Content-Type": "application/json"}
-      response = requests.request("POST", url, json=payload, headers=headers)
-      print(response.text)
+      winsound.PlaySound(chopSound, winsound.SND_FILENAME)  
+      try:
+        response = requests.request("POST", url, json=payload, headers=headers, timeout=0)
+      except:
+        pass

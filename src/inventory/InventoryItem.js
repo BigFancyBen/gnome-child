@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-const api = "http://localhost:3000/images/items-json/";
+const api = "http://localhost:9000/images/items-json/";
 
 const InventItem = styled.div`
   width: calc(25% - 18px);

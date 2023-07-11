@@ -70,7 +70,6 @@ function Chat() {
         //todo chat bot commands maybe?
         client.say(channel, `@${tags.username}, heya!`);
       } else {
-        console.log(tags);
         const newChat = { username: tags["display-name"], message: message };
         setChatMessages((chatMessages) => [newChat, ...chatMessages]);
       }
