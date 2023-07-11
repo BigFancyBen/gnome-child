@@ -6,6 +6,10 @@ ADB port forward `~/.powbot/android/platform-tools/adb.exe -s 88VX030ZX forward 
 ADB port reverse `~/.powbot/android/platform-tools/adb.exe reverse tcp:6969 tcp:6969` \
 Startup bot with `./gradlew run`
 
+_phone_ \
+Start VPN \
+Launch OSRS
+
 _/projects/gnome-child_ \
 Startup frontend with `yarn dev` \
 Connect joycon in windows bluetooth settings \
