@@ -4,10 +4,8 @@ import LevelUp from "../levelup/Levelup";
 import XpDrop from "../xpdrop/XpDrop";
 import Bank from "../bank/Bank";
 import XpTracker from "../xptracker/XpTracker";
-//import VideoBackground from '../video/VideoBackground';
-//<VideoBackground curCam={cam} />
-
-const OBSWebSocket = require("obs-websocket-js");
+import OBSWebSocket from "obs-websocket-js";
+import "../sounds/tree-knocked.wav";
 
 function Poller() {
   const [inventory, setInventory] = useState([]);
@@ -17,8 +15,111 @@ function Poller() {
   const [xpLeft, setXpLeft] = useState(null);
   const [curXp, setCurXp] = useState(null);
   const obs = new OBSWebSocket();
+  const audio = new Audio("./sounds/tree-knocked.wav");
 
-  // You must add this handler to avoid uncaught exceptions.
+  async function connectOBS() {
+    const response = await obs.connect("ws://localhost:4444", "verysecurelol");
+    console.log("obs web socket connected");
+    await obs.callBatch([
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 1,
+          sceneItemEnabled: false,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 2,
+          sceneItemEnabled: false,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 3,
+          sceneItemEnabled: false,
+        },
+      },
+    ]);
+  }
+
+  async function hideTree() {
+    await obs.call("SetSceneItemEnabled", {
+      sceneName: "WC BG",
+      sceneItemId: 2,
+      sceneItemEnabled: false,
+    });
+  }
+
+  async function showTree() {
+    await obs.call("SetSceneItemEnabled", {
+      sceneName: "WC BG",
+      sceneItemId: 2,
+      sceneItemEnabled: true,
+    });
+  }
+
+  async function goToBank() {
+    await obs.callBatch([
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 1,
+          sceneItemEnabled: true,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 2,
+          sceneItemEnabled: false,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 3,
+          sceneItemEnabled: true,
+        },
+      },
+    ]);
+  }
+  async function doneBanking() {
+    await obs.callBatch([
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 1,
+          sceneItemEnabled: false,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 2,
+          sceneItemEnabled: true,
+        },
+      },
+      {
+        requestType: "SetSceneItemEnabled",
+        requestData: {
+          sceneName: "BANKING BG",
+          sceneItemId: 3,
+          sceneItemEnabled: false,
+        },
+      },
+    ]);
+  }
 
   function handlePoll(data) {
     if (Object.keys(data).length === 0) {
@@ -41,35 +142,29 @@ function Poller() {
     }
     if (data.banking) {
       if (data.banking === "banking") {
-        obs.send("SetCurrentScene", {
-          "scene-name": "Banking Scene",
-        });
+        goToBank();
       }
       if (data.banking === "back") {
-        obs.send("SetCurrentScene", {
-          "scene-name": "Tree Scene",
-        });
+        doneBanking();
       }
     }
-    if (data.bankedLoot > 0) {
+    if (data.treeIndicator) {
+      if (data.treeIndicator === "TREE") {
+        showTree();
+      }
+      if (data.treeIndicator === "STUMP") {
+        audio.play();
+        hideTree();
+      }
+    }
+    if (data.bankedLoot.length > 0) {
       setBankLoot(data.bankedLoot);
     }
   }
 
   useEffect(() => {
     getInitialInventory();
-    obs
-      .connect({
-        address: "localhost:4444",
-        password: "verysecurelol",
-      })
-      .then(() => {
-        console.log(`obs connected`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
+    connectOBS();
     setInterval(function () {
       fetch("http://localhost:6969/clientPoll", {
         method: "GET",
