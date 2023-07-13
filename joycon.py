@@ -13,7 +13,7 @@ while True:
     joycon_id = get_R_id()
     joycon = GyroTrackingJoyCon(*joycon_id)
   except Exception:
-    print('retrying', Exception)
+    print('Joycon not connected')
     pass
   else:
     xMax = joycon.direction[0]
@@ -41,6 +41,6 @@ while True:
       print('chop')
       winsound.PlaySound(chopSound, winsound.SND_FILENAME)  
       try:
-        response = requests.request("POST", url, json=payload, headers=headers, timeout=0)
+        response = requests.request("POST", url, json=payload, headers=headers, timeout=1/30)
       except:
         pass
