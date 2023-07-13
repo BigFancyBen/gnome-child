@@ -12,7 +12,7 @@ Connect joycon in windows bluetooth settings \
 Startup motion script with `py joycon.py`
 
 _/projects/osrs-icons_ \
-Startup image json server with `python -m http.server 9000`
+Startup image json server with `npx serve --cors -l 9000 `
 
 _OBS_ \
 Startup Xsplit Vcam \
